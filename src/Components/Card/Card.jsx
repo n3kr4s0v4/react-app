@@ -1,14 +1,18 @@
+import style from '../Card/Card.module.scss'
 import Button from '../Button/Button'
-import '../Card/Card.module.scss'
+import { useState } from 'react'
 
-function Card({word, transcription, translate}) {
+function showWord ({translate}){
   return (
-    <div className="card">
+  <div className="word-translate">{translate}</div>
+)}
 
-        <Button/>
+export default function Card({word, transcription, translate}) {
+  return (
+    <div className={style.card}>
+      <div className={style.card_word}>{word}</div>
+      <div className="word-transcription">{transcription}</div>
+      
         </div>
   )
 }
-
-
-export default Card
